@@ -1,11 +1,15 @@
 import Quick
 import Nimble
-@testable import SwiftBlade
+@testable import class SwiftBlade.Injector
 
-final class InjectorSpec: QuickSpec {
+class InjectorSpec: QuickSpec {
     override func spec() {
-        it("should fail") {
-            fail()
+        describe("An Injector") {
+            describe("with a MockInjectorRegistrable") {
+                itBehavesLike(AnInjectorWithARegistrable.self) {
+                    MockInjectorRegistrable()
+                }
+            }
         }
     }
 }
